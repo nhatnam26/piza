@@ -1,124 +1,92 @@
 🍕 Nam FlashSale dApp (IOTA + Move + Next.js)
 
-Dự án Web3 của Nam – xây dựng dApp Flash Sale & Demo Smart Contract Move trên mạng IOTA Devnet.
-Gồm 2 phần chính:
+A Web3 decentralized application built by Nam, featuring:
 
-🔥 Flash Sale dApp (mua hàng Web3, thanh toán bằng IOTA)
+🔥 Flash Sale dApp using IOTA wallet
 
-🍕 Pizza Move Contract (demo tạo object & tương tác blockchain)
+🍕 Move Smart Contract (Pizza Contract) deployed on IOTA Devnet
 
-👜 Kết nối ví IOTA (dùng IOTA Wallet Chrome Extension)
+👜 Wallet connection via IOTA dApp Kit
 
-🌐 Frontend Next.js + IOTA dApp Kit
+🌐 Frontend powered by Next.js + TypeScript
 
-🚀 Cách chạy dự án
-# 1. Cài dependencies
+This project demonstrates how to build a full-stack IOTA dApp mixing Web2 UI logic with Web3 blockchain transactions.
+Quick Start:
+# 1. Install dependencies
 npm install --legacy-peer-deps
 
-# 2. Deploy smart contract (Move)
+# 2. Deploy Move smart contract to Devnet
 npm run iota-deploy
 
-# 3. Chạy web frontend
+# 3. Run the Next.js development server
 npm run dev
+🎯 Features
+🔥 Web3 Flash Sale
 
-🧱 Chức năng chính
-🔥 Flash Sale Web3
+Interactive Flash Sale product UI
 
-Hiển thị sản phẩm Flash Sale
+Purchase using IOTA wallet
 
-Thanh toán bằng IOTA
+Real-time quantity, timer, and user validation
 
-Check ví, check thời gian, check số lượng tồn
+Transactions signed directly via IOTA Wallet Extension
 
-Giao dịch hiển thị trên ví IOTA
+🍕 Move Smart Contract (PizzaBox)
 
-🍕 Demo Pizza Move Contract
+cook() — creates a PizzaBox object on-chain
 
-Hàm cook() tạo ra 1 PizzaBox
+get_flag() — returns a Flag object if pizza data matches the required formula
 
-Hàm get_flag() trả về Flag nếu dữ liệu Pizza hợp lệ
+Both functions are public entry functions, fully callable from the frontend
 
-Gọi được trực tiếp từ UI
+👜 Wallet Integration
 
-👜 Wallet Connect
+Connect & auto-reconnect wallet
 
-Kết nối tài khoản devnet
+Display user address
 
-Hiện địa chỉ ví
+Sign and submit IOTA transactions
 
-Gửi giao dịch đến smart contract
-
-🎨 UI:
+🌐 Modern Frontend
 
 Next.js 14 App Router
 
 Radix UI
 
-Dark theme đẹp mắt
+TypeScript
 
-Component tách gọn gàng
+React Query
 
-📁 Cấu trúc dự án
-├── app/
-│   ├── page.tsx           # Trang chính (Flash Sale + Pizza)
-│   └── Provider.tsx       # Wrap IOTA + React Query
-│
-├── components/
-│   ├── FlashSale.tsx      # Giao diện Flash Sale
-│   ├── Wallet-connect.tsx # Kết nối ví IOTA
-│   └── sample.tsx         # Demo gọi cook() và get_flag()
-│
-├── hooks/
-│   └── useContract.ts     # Gọi smart contract Move từ frontend
-│
-├── lib/
-│   └── config.ts          # Chứa Package ID + network
-│
-├── contract/
-│   └── pizza_box/
-│       ├── sources/       # Move smart contracts
-│       └── Move.toml
-│
-└── prompts/               # Tự tạo prompt bằng AI để custom UI
+Clean component architecture
+📦 Smart Contract Deployment: npm run dev
+This script will automatically:
 
-📦 Deploy Contract
+Build the Move contract
 
-Chạy:
+Deploy it to IOTA Devnet
 
-npm run iota-deploy
+Extract and update the Package ID inside lib/config.ts
 
+Generate an AI prompt for UI integration in /prompts
 
-Nó tự động:
+After deployment, your package ID will be shown like:
+Package ID: 0x6b59a9423c6aa80f8c6e7e6ec0fe93f38168ce412254880ae59616d06ac275d4
+📚 Useful Links
 
-Build Move contract
-
-Deploy lên IOTA Devnet
-
-Lấy packageId
-
-Cập nhật vào file: lib/config.ts
-
-Tạo prompt để custom UI
-
-📚 Tài liệu tham khảo
-
-🔗 IOTA Devnet Explorer
+🔗 IOTA Explorer (Devnet)
 https://explorer.iota.org/
 
-🔗 IOTA SDK
-https://github.com/iotaledger/iota-sdk
+🔗 IOTA dApp Kit
+https://github.com/iotaledger/dapp-kit
 
-🔗 Move Language
+🔗 Move Language Documentation
 https://github.com/move-language/move
 
-🔗 Next.js
+🔗 Next.js Documentation
 https://nextjs.org/docs
 
-👨‍💻 Tác giả
-
-Đinh Nhật Nam – Web3 Developer
-(Dự án thực hành IOTA Move + Next.js)
-
+👨‍💻 Author
+Đinh Nhật Nam
+Web3 / Move / IOTA Developer
 📄 License
-
 MIT
